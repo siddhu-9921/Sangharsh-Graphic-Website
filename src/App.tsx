@@ -3,12 +3,12 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import PortfolioSection from './components/PortfolioSection';
+{/*import PortfolioDetails from './pages/PortfolioDetails';*/}
+
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-{/*}
-import Home from "./pages/Home";
-import ImageView from "./pages/ImageView";
-*/}
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -20,11 +20,13 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           
-         {/* <Route path="/" element={<Home />} />*/}
+        
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} /> 
           
-          {/* <Route path="/image/:id" element={<ImageView />} /> */}
+           <Route path="/" element={<PortfolioSection />} />
+       {/* <Route path="/portfolio/:id" element={<PortfolioDetails />} /> */}
+
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

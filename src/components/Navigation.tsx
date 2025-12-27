@@ -23,21 +23,36 @@ const Navigation = () => {
     { href: '#contact', label: 'Contact' },
   ];
 
+  const navTextClass = isScrolled ? 'text-gray-900' : 'text-white/90';
+  const navHoverClass = isScrolled ? 'hover:text-primary' : 'hover:text-white';
+
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${isScrolled ? 'bg-background/95 backdrop-blur-md shadow-card' : 'bg-transparent'
-      }`}>
-      <div className="container mx-auto px-4 py-4">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? 'bg-white shadow-md'
+          : 'bg-transparent'
+        }`}
+    >
+
+      <div className="container mx-auto px-4 py-2">
+
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img
               src={logoImg}
               alt="Sangharsh Graphics Logo"
-              className="w-11 h-11 rounded-full shadow-md"
+              className="w-12 h-12 scale-110 rounded-full object-contain shadow-md"
             />
-            <span className="text-xl font-bold text-gradient whitespace-nowrap">
+
+            <span
+              className={`text-xl font-semibold tracking-wide transition-colors duration-300 ${isScrolled ? 'text-gray-900' : 'text-white'
+                }`}
+            >
               Sangharsh Graphics
             </span>
+
           </div>
 
 
@@ -45,13 +60,15 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
+
               <a
                 key={item.href}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-smooth font-medium"
+                className={`font-medium transition-colors duration-300 ${navTextClass} ${navHoverClass}`}
               >
                 {item.label}
               </a>
+
             ))}
             <Button variant="default" className="bg-gradient-primary shadow-glow animate-glow">
               Get Quote

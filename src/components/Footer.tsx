@@ -63,7 +63,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5" />
-                <span>Mumbai, Maharashtra</span>
+                <span>Nanded , Maharashtra</span>
               </div>
             </div>
           </div>
@@ -132,8 +132,8 @@ const Footer = () => {
                 Get Free Quote
               </Button>
               <Button 
-                variant="outline" 
-                className="w-full border-white text-white hover:bg-white hover:text-primary"
+                variant="secondary" 
+                className="w-full bg-white text-primary hover:bg-white/90"
               >
                 View Portfolio
               </Button>

@@ -1,14 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { 
-  PenTool, 
-  Printer, 
-  Smartphone, 
-  Package, 
-  Megaphone, 
+import {
+  PenTool,
+  Printer,
+  Smartphone,
+  Package,
+  Megaphone,
   Palette,
   FileText,
-  Zap 
+  Zap
 } from 'lucide-react';
 
 const ServicesSection = () => {
@@ -18,42 +18,42 @@ const ServicesSection = () => {
       title: 'Brand Identity Design',
       description: 'Complete brand identity packages including logos, business cards, and letterheads that make lasting impressions.',
       features: ['Logo Design', 'Business Cards', 'Letterheads', 'Brand Guidelines'],
-     
+
     },
     {
       icon: Smartphone,
       title: 'Social Media Graphics',
       description: 'Eye-catching social media designs that boost engagement and grow your online presence across all platforms.',
       features: ['Instagram Posts', 'Facebook Covers', 'Story Templates', 'Video Thumbnails'],
-      
+
     },
     {
       icon: Megaphone,
       title: 'Political Campaign Design',
       description: 'Powerful political banners, posters, and campaign materials that capture attention and convey your message.',
       features: ['Campaign Banners', 'Posters', 'Flex Designs', 'Digital Ads'],
-      
+
     },
     {
       icon: FileText,
       title: 'Bill Books & Invoices',
       description: 'Professional bill books, invoices, and business forms designed to enhance your business credibility.',
       features: ['Custom Bill Books', 'Invoice Templates', 'Receipt Designs', 'Order Forms'],
-      
+
     },
     {
       icon: Package,
       title: 'Product Packaging',
       description: 'Stunning packaging designs that make your products stand out on shelves and drive sales.',
       features: ['Box Design', 'Label Design', 'Bag Design', '3D Mockups'],
-      
+
     },
     {
       icon: Printer,
       title: 'Flex & Large Format',
       description: 'High-impact large format designs for outdoor advertising, events, and promotional campaigns.',
       features: ['Flex Banners', 'Hoarding Design', 'Vehicle Wraps', 'Event Backdrops'],
-      
+
     }
   ];
 
@@ -74,8 +74,8 @@ const ServicesSection = () => {
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {services.map((service, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="group hover-lift bg-gradient-card border-0 shadow-card h-full"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -87,12 +87,12 @@ const ServicesSection = () => {
                     {service.title}
                   </CardTitle>
                 </CardHeader>
-                
+
                 <CardContent className="text-center space-y-4">
                   <p className="text-muted-foreground">
                     {service.description}
                   </p>
-                  
+
                   <div className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center justify-center text-sm text-muted-foreground">
@@ -101,13 +101,13 @@ const ServicesSection = () => {
                       </div>
                     ))}
                   </div>
-                  
+
                   <div className="pt-4 border-t border-border/50">
                     <div className="text-2xl font-bold text-primary mb-4">
-                     
+
                     </div>
-                    <Button 
-                      variant="outline" 
+                    <Button
+                      variant="outline"
                       className="w-full group-hover:bg-gradient-primary group-hover:text-white group-hover:border-transparent transition-all"
                     >
                       Get Quote
@@ -127,18 +127,17 @@ const ServicesSection = () => {
               Every project is unique. Let's discuss your specific requirements and create something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="secondary" 
+              <Button
+                size="lg"
+                variant="secondary"
                 className="bg-white text-primary hover:bg-white/90 shadow-lg hover-lift"
               >
                 Schedule Consultation
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary"
-              >
+              <Button
+                size="lg"
+                variant="secondary"
+                className="bg-white text-primary hover:bg-white/90 shadow-lg hover-lift"              >
                 View Pricing Guide
               </Button>
             </div>

@@ -10,6 +10,12 @@ import politicalImg from '@/assets/portfolio/political-banner.jpg';
 import logoImg from '@/assets/portfolio/logo-design.jpg';
 import billBookImg from '@/assets/portfolio/bill-book.jpg';
 import flexPrintImg from '@/assets/portfolio/flex-print.jpg';
+import productImg from '@/assets/portfolio/product-packaging.jpg'
+
+import { useNavigate } from 'react-router-dom';
+
+
+
 
 
 
@@ -71,7 +77,7 @@ const PortfolioSection = () => {
       title: 'Product Packaging',
       category: 'packaging',
       description: 'Eye-catching packaging designs that sell',
-      image: '📦',
+      image: productImg,
       tags: ['Packaging', 'Product', 'Retail']
     },
     {
