@@ -12,7 +12,7 @@ const Dashboard = () => {
       .then(res => res.json())
       .then(data => setOrders(data));
 
-    fetch("https://your-backend.onrender.com/api/images")
+    fetch("https://my-backend-warq.onrender.com/api/images")
     .then(res => res.json())
     .then(data => setImages(data));
 
