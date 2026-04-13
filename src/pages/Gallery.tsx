@@ -7,7 +7,7 @@ function Gallery() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch(`https://my-backend-warq.onrender.com/api/images/${category}`)
+    fetch(`https://my-backend-warq.onrender.com/api/images/${encodeURIComponent(category)}`)
       .then(res => res.json())
       .then(data => {
         console.log("Images:", data);

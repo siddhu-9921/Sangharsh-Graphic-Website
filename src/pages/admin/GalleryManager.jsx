@@ -189,7 +189,7 @@ function GalleryManager() {
             >
 
               <img
-                src={`https://my-backend-warq.onrender.com/${img.path}`}
+                src={img.url}
                 alt="design"
               />
 
