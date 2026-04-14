@@ -19,26 +19,44 @@ const FileManager = () => {
 
   const handleUpload = async () => {
 
-    if (!category || files.length === 0) {
-      alert("Select category and images");
-      return;
+  if (!category || files.length === 0) {
+    alert("Select category and images");
+    return;
+  }
+
+  const formData = new FormData();
+
+  // ✅ append ONLY ONCE
+  files.forEach(file => {
+    formData.append("images", file);
+  });
+
+  formData.append("category", category);
+
+  try {
+    const res = await fetch("https://my-backend-warq.onrender.com/api/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert("Images uploaded successfully");
+      console.log("Saved:", data);
+      // Reset form
+      setCategory("");
+      setFiles([]);
+    } else {
+      alert("Upload failed: " + (data.message || data.error));
+      console.log("Error:", data);
     }
 
-    const formData = new FormData();
-
-    formData.append("category", category);
-
-    files.forEach(file => {
-      formData.append("images", file);
-    });
-
-    await fetch("https://my-backend-warq.onrender.com/api/upload", {
-      method: "POST",
-      body: formData
-    });
-
-    alert("Images uploaded successfully");
-  };
+  } catch (error) {
+    console.error("Upload error:", error);
+    alert("Upload failed - backend not reachable or error occurred");
+  }
+};
 
   return (
     <div style={{ padding: "30px" }}>
@@ -75,7 +93,7 @@ const FileManager = () => {
       `}</style>
 
       <div className="page-title">
-        <Upload size={26}/>
+        <Upload size={26} />
         Upload Designs
       </div>
 
@@ -83,25 +101,25 @@ const FileManager = () => {
 
         <select
           value={category}
-          onChange={(e)=>setCategory(e.target.value)}
+          onChange={(e) => setCategory(e.target.value)}
         >
           <option value="">Select Category</option>
 
-          {categories.map((cat,i)=>(
+          {categories.map((cat, i) => (
             <option key={i} value={cat}>{cat}</option>
           ))}
 
         </select>
 
-        <br/><br/>
+        <br /><br />
 
         <input
           type="file"
           multiple
-          onChange={(e)=>setFiles(Array.from(e.target.files))}
+          onChange={(e) => setFiles(Array.from(e.target.files))}
         />
 
-        <br/><br/>
+        <br /><br />
 
         <button onClick={handleUpload}>
           Upload Images

@@ -188,10 +188,7 @@ function GalleryManager() {
               onClick={() => setSelectedImage(img)}
             >
 
-              <img
-                src={img.url}
-                alt="design"
-              />
+              <img src={img.url} alt="design" />
 
               <button
                 className="delete-btn"

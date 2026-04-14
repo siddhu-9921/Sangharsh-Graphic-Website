@@ -31,11 +31,7 @@ function Gallery() {
         }}>
 
           {images.map((img) => (
-            <img
-              key={img._id}
-              src={`https://my-backend-warq.onrender.com/uploads/${encodeURIComponent(img.filename)}`}
-              style={{ width: "100%" }}
-            />
+            <img src={img.url} style={{ width: "100%" }} />
           ))}
 
         </div>
