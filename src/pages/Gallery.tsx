@@ -31,7 +31,7 @@ function Gallery() {
         }}>
 
           {images.map((img) => (
-            <img src={img.url} style={{ width: "100%" }} />
+            <img key={img._id} src={img.url} style={{ width: "100%" }} />
           ))}
 
         </div>

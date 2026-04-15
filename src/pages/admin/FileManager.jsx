@@ -19,44 +19,50 @@ const FileManager = () => {
 
   const handleUpload = async () => {
 
-  if (!category || files.length === 0) {
-    alert("Select category and images");
-    return;
-  }
-
-  const formData = new FormData();
-
-  // ✅ append ONLY ONCE
-  files.forEach(file => {
-    formData.append("images", file);
-  });
-
-  formData.append("category", category);
-
-  try {
-    const res = await fetch("https://my-backend-warq.onrender.com/api/upload", {
-      method: "POST",
-      body: formData,
-    });
-
-    const data = await res.json();
-
-    if (res.ok) {
-      alert("Images uploaded successfully");
-      console.log("Saved:", data);
-      // Reset form
-      setCategory("");
-      setFiles([]);
-    } else {
-      alert("Upload failed: " + (data.message || data.error));
-      console.log("Error:", data);
+    if (!category || files.length === 0) {
+      alert("Select category and images");
+      return;
     }
 
-  } catch (error) {
-    console.error("Upload error:", error);
-    alert("Upload failed - backend not reachable or error occurred");
-  }
-};
+    const formData = new FormData();
+
+    // ✅ append ONLY ONCE
+    files.forEach(file => {
+      formData.append("images", file);
+    });
+
+    formData.append("category", category);
+
+    try {
+      const res = await fetch("https://my-backend-warq.onrender.com/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      let data;
+
+      try {
+        data = await res.json();
+      } catch {
+        data = { error: "Server error" };
+      }
+
+      if (res.ok) {
+        alert("Images uploaded successfully");
+        console.log("Saved:", data);
+        // Reset form
+        setCategory("");
+        setFiles([]);
+      } else {
+        alert("Upload failed: " + (data.message || data.error));
+        console.log("Error:", data);
+      }
+
+    } catch (error) {
+      console.error("Upload error:", error);
+      alert("Upload failed - backend not reachable or error occurred");
+    }
+  };
 
   return (
     <div style={{ padding: "30px" }}>

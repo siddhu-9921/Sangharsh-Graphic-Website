@@ -213,7 +213,7 @@ function GalleryManager() {
           >
 
             <img
-              src={`https://my-backend-warq.onrender.com/${selectedImage.path}`}
+              src={selectedImage.url} 
               alt="preview"
             />
 
