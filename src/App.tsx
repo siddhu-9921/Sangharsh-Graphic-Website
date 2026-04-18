@@ -12,7 +12,7 @@ import FileManager from "./pages/admin/FileManager.jsx";
 import GalleryManager from "./pages/admin/GalleryManager.jsx";
 import Settings from "./pages/admin/Settings.jsx";
 
-import PortfolioSection from "./components/PortfolioSection";
+import DesignsSection from "./components/DesignsSection";
 import Gallery from "./pages/Gallery";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -35,7 +35,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/admin-login" element={<Login />} />
           <Route path="/verify" element={<OTPVerify />} />
-          <Route path="/portfolio" element={<PortfolioSection />} />
+          <Route path="/designs" element={<DesignsSection />} />
           <Route path="/gallery/:category" element={<Gallery />} />
           <Route path="/quote" element={<Quote />} />
           <Route

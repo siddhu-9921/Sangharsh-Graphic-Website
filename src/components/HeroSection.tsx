@@ -44,14 +44,14 @@ const HeroSection = () => {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fadeInUp" style={{ animationDelay: '0.8s' }}>
          
-           {/* View Portfolio */}
-          <a href="#portfolio">
+           {/* View Designs */}
+          <a href="#designs">
             <Button
               size="lg"
               className="bg-white text-primary hover:bg-white/90 shadow-elegant hover-lift px-8 py-4 text-lg"
             >
               <Eye className="mr-2 w-5 h-5" />
-              View Portfolio
+              View Designs
             </Button>
           </a>
     

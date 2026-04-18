@@ -18,7 +18,7 @@ const Footer = () => {
   const quickLinks = [
     { href: '#home', label: 'Home' },
     { href: '#about', label: 'About' },
-    { href: '#portfolio', label: 'Portfolio' },
+    { href: '#designs', label: 'Designs' },
     { href: '#services', label: 'Services' },
     { href: '#contact', label: 'Contact' }
   ];
@@ -134,13 +134,13 @@ const Footer = () => {
               </Button>
               </a>
 
-              {/* View Portfolio */}
-              <a href="#portfolio" className="block">
+              {/* View Designs */}
+              <a href="#designs" className="block">
               <Button 
                 variant="secondary" 
                 className="w-full bg-white text-primary hover:bg-white/90"
               >
-                View Portfolio
+                View Designs
               </Button>
               </a>
               

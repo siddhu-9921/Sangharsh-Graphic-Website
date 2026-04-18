@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
-import PortfolioSection from '@/components/PortfolioSection';
+import DesignsSection from '@/components/DesignsSection';
 import ServicesSection from '@/components/ServicesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
@@ -64,7 +64,7 @@ const Index = () => {
 
       <HeroSection />
       <AboutSection />
-      <PortfolioSection />
+      <DesignsSection />
       <ServicesSection />
       <TestimonialsSection />
       <ContactSection />

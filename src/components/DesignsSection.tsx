@@ -3,14 +3,14 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Filter } from 'lucide-react';
-import businessCardImg from '@/assets/portfolio/business-card.jpg';
-import letterheadImg from '@/assets/portfolio/letterhead.jpg';
-import socialMediaImg from '@/assets/portfolio/social-media.jpg';
-import politicalImg from '@/assets/portfolio/political-banner.jpg';
-import logoImg from '@/assets/portfolio/logo-design.jpg';
-import billBookImg from '@/assets/portfolio/bill-book.jpg';
-import flexPrintImg from '@/assets/portfolio/flex-print.jpg';
-import productImg from '@/assets/portfolio/product-packaging.jpg'
+import businessCardImg from '@/assets/designs/business-card.jpg';
+import letterheadImg from '@/assets/designs/letterhead.jpg';
+import socialMediaImg from '@/assets/designs/social-media.jpg';
+import politicalImg from '@/assets/designs/political-banner.jpg';
+import logoImg from '@/assets/designs/logo-design.jpg';
+import billBookImg from '@/assets/designs/bill-book.jpg';
+import flexPrintImg from '@/assets/designs/flex-print.jpg';
+import productImg from '@/assets/designs/product-packaging.jpg'
 
 import { useNavigate } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const PortfolioSection = () => {
+const DesignsSection = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const categories = [
@@ -31,7 +31,7 @@ const PortfolioSection = () => {
     { id: 'political', label: 'Political' }
   ];
 
-  const portfolioItems = [
+  const designsItems = [
     {
       id: 1,
       title: 'Modern Business Cards',
@@ -103,17 +103,17 @@ const PortfolioSection = () => {
   const navigate = useNavigate();
 
   const filteredItems = activeFilter === 'all'
-    ? portfolioItems
-    : portfolioItems.filter(item => item.category === activeFilter);
+    ? designsItems
+    : designsItems.filter(item => item.category === activeFilter);
 
   return (
-    <section id="portfolio" className="py-20 bg-background">
+    <section id="designs" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
-              Our Portfolio
+              Our Designs
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Explore our diverse range of design work across multiple industries and mediums.
@@ -135,7 +135,7 @@ const PortfolioSection = () => {
             ))}
           </div>
 
-          {/* Portfolio Grid */}
+          {/* Designs Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
             {filteredItems.map((item, index) => (
               <Card
@@ -194,4 +194,4 @@ const PortfolioSection = () => {
   );
 };
 
-export default PortfolioSection;
+export default DesignsSection;
